@@ -1,10 +1,12 @@
 package algorithms;
 
+import exceptions.NOutOfBoundException;
+
 public class Fibonacci {
 	
 	//n means the n'st Fibonacci number
 	
-	public long calculateFn(int n) {
+	public long calculateFn(int n) throws NOutOfBoundException {
 		long fn = 0;
 
 		if(n==0){
@@ -15,8 +17,8 @@ public class Fibonacci {
 			fn = 1;
 		}
 		
-		if(n<0){
-			throw new 
+		else if(n<0){
+			throw new NOutOfBoundException("The input of calculateFn(int n) in Fabonacci is out of bound!");
 		}
 		
 		else{
