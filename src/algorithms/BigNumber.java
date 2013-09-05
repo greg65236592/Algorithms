@@ -8,7 +8,7 @@ import java.util.List;
 public class BigNumber {
 	
 	public List<Integer> BigNumberMultiple(
-			List<Integer> firstNumList, List<Integer> secondNumList){
+		List<Integer> firstNumList, List<Integer> secondNumList){
 		
 		int totalLength = firstNumList.size() + secondNumList.size() + 1;
 		List<Integer> answer = new ArrayList<Integer>();	
@@ -19,14 +19,15 @@ public class BigNumber {
 		System.out.println(answer.size());
 		
 		//every position starts from 0
-		for(int aPos = 0; aPos < firstNumList.size(); aPos ++){
-			for(int bPos = 0; bPos < secondNumList.size(); bPos ++){
-				System.out.println("Loop aPos:"+aPos+" Loop b:"+bPos);
-				int currentPos = aPos + bPos;
+		for(int firstNumPos = 0; firstNumPos < firstNumList.size(); firstNumPos ++){
+			for(int secondPos = 0; secondPos < secondNumList.size(); secondPos ++){
+				System.out.println("Loop aPos:"+firstNumPos+" Loop b:"+secondPos);
+				int currentPos = firstNumPos + secondPos;
 				int currentPosVal = answer.get(currentPos);
-				currentPosVal += firstNumList.get(aPos) * secondNumList.get(bPos);
+				//answer_n =  firstNum_a * secondNum_b (n = a + b)
+				currentPosVal += firstNumList.get(firstNumPos) * secondNumList.get(secondPos);
 				answer.set(currentPos, currentPosVal);
-				
+				//check every carry in answer list
 				checkForCarry(answer);
 			}
 		}
@@ -56,7 +57,58 @@ public class BigNumber {
 	
 	//TODO
 	//String Parser
+	private List<Integer> converStringToList(String inputStr){
+		List<Integer> result = new ArrayList<Integer>();
+		
+	}
 	
 	//TODO
 	//File Reader
+	
+	//this method is used to reverse the input String
+	//in order to convert them into list
+	//NOTE: this method actually can be achieve by "StringBuffer.reverse()"
+	private String reverseStr(String input){
+
+		List<Character> tmpForward = new ArrayList<Character>();
+		List<Character> tmpBackward = new ArrayList<Character>();
+		
+		//initial tmp, add input.toCharArray() into tmpForward List
+		char[] inputArray = input.toCharArray();
+		for(int pos = 0; pos < input.length(); pos++){
+			tmpForward.add(inputArray[pos]);
+		}
+
+		for(int pos = input.length() - 1; pos >= 0; pos--){
+			tmpBackward.add(pos, arg1);
+		}
+		return output;
+	}
+	
+	private List<Character> putStrIntoCharList(String input){
+		List<Character> result = new ArrayList<Character>();
+		for(int pos = 0; pos < input.length(); pos++){
+			result.add(input.charAt(pos));
+		}
+		return result;
+	}
+	
+	private String putCharListIntoStr(List<Character> inputList){
+		Object[] inputCharArray = inputList.toArray();
+		String result = new String();
+	}
+	
+	private List<Character> reverseCharList(List<Character> inputList){
+		List<Character> forwardList = inputList;
+		List<Character> backwardList = new ArrayList<Character>();
+		//initial backwardList
+		for(int pos = 0; pos < forwardList.size(); pos++){
+			backwardList.add(' ');
+		}
+		//reverse the inputList's content 
+		for(int pos = forwardList.size() - 1; pos >= 0; pos--){
+			backwardList.add(inputList.get(pos));
+		}
+		return backwardList;
+	}
 }

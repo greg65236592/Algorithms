@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import exceptions.NOutOfBoundException;
@@ -9,7 +10,10 @@ import algorithms.Fibonacci;
 public class Main {
 	
 	public static void  main(String[] args){
+		Calendar startTime = Calendar.getInstance();
 		testBigNumber();
+		Calendar endtTime = Calendar.getInstance();
+		System.out.println("Time spend: " + endtTime.compareTo(startTime));
 	}
 	
 	public static void testFabonacci(){
