@@ -32,21 +32,9 @@ public class Main {
 	}
 	
 	public static void testBigNumber(){
-		List<Integer> a = new ArrayList<Integer>();	
-		List<Integer> b = new ArrayList<Integer>();	
-		a.add(0);
-		a.add(9);
-		a.add(8);
-		a.add(8);
-		a.add(2);
-
-		b.add(9);
-		b.add(2);
-		b.add(1);
-		b.add(5);
-		b.add(1);
 		BigNumber bigNum = new BigNumber();
-		System.out.println(bigNum.BigNumberMultiple(a, b));
+		System.out.println(bigNum.BigNumberMultiple("25987498173019853036501", "6781987301953701358"));
 	}
+	
 
 }
