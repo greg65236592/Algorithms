@@ -4,16 +4,24 @@ import java.util.List;
 
 import exceptions.NOutOfBoundException;
 import algorithms.BigNumber;
+import algorithms.BubbleSort;
 import algorithms.Fibonacci;
 
 
 public class Main {
 	
 	public static void  main(String[] args){
-		Calendar startTime = Calendar.getInstance();
-		testBigNumber();
-		Calendar endtTime = Calendar.getInstance();
-		System.out.println("Time spend: " + endtTime.compareTo(startTime));
+
+		BubbleSort bs = new BubbleSort();
+		List<Integer> input = new ArrayList<Integer>();
+		
+		input.add(8978791);
+		input.add(977);
+		input.add(9);
+		input.add(59);
+		input.add(19);
+
+		System.out.println(bs.performBubbleSort(input));
 	}
 	
 	public static void testFabonacci(){
